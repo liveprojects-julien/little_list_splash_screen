@@ -8,7 +8,7 @@
   ])
 
     .config(function ($urlRouterProvider){
-      $urlRouterProvider.otherwise('/homepage');
+      $urlRouterProvider.otherwise('/splashscreen');
     })
 
     .run(function ($state, $rootScope) {
@@ -17,8 +17,8 @@
         
         event.preventDefault();
 
-        $state.get('homepage').error = { code: 123, descriptions: 'Exception stack trace' }
-        return $state.go('homepage');
+        $state.get('splashscreen').error = { code: 123, descriptions: 'Exception stack trace' }
+        return $state.go('splashscreen');
       });
 
     })

@@ -3,16 +3,16 @@
 
     angular
         .module('mainjs')
-        .controller('homepageCtrl', homepageCtrl);
+        .controller('splashscreenCtrl', splashscreenCtrl);
 
-    homepageCtrl.$inject = [
+    splashscreenCtrl.$inject = [
         '$scope',
         '$state',
         'mqttService',
         'brokerDetails'
         ];
     
-    function homepageCtrl(
+    function splashscreenCtrl(
         $scope,
         $state,
         mqttService,
@@ -22,9 +22,9 @@
 
         vm.update = function(){
             
-            $state.go('car_control');
+            $state.go('homepage');
         }
-
+        console.log("splash");
         //Initialises the range of channels that can be selected and the selected channel
         vm.channels = Array.apply(null, {
             length: 5
