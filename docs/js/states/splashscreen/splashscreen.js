@@ -3,16 +3,16 @@
 
     angular
         .module('mainjs')
-        .controller('homepageCtrl', homepageCtrl);
+        .controller('splashscreenCtrl', splashscreenCtrl);
 
-    homepageCtrl.$inject = [
+    splashscreen.$inject = [
         '$scope',
         '$state',
         'mqttService',
         'brokerDetails'
         ];
     
-    function homepageCtrl(
+    function splashscreenCtrl(
         $scope,
         $state,
         mqttService,
@@ -22,7 +22,7 @@
 
         vm.update = function(){
             
-            $state.go('car_control');
+            $state.go('homepage');
         }
 
         //Initialises the range of channels that can be selected and the selected channel
@@ -64,7 +64,7 @@
 
                 mqttService.connect(function (success, error) {
                     if (success) {
-                        $state.transitionTo('car_control',
+                        $state.transitionTo('homepage',
                             {
                                 channel: vm.channel,
                             });
