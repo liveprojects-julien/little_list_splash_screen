@@ -68,5 +68,11 @@
           }
         
         })
+        .state('homepage', {
+          cache: false,
+          url: '/homepage',
+          templateUrl: 'js/states/homepage/homepage.html',
+          controller: 'homepageCtrl as vm'
+        })
     });
 })();
