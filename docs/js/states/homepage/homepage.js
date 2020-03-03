@@ -41,11 +41,14 @@
                 });
             }
         }
-
+        
+        //mqttService.onMessageArrived(messageService.onMessageArrived);
         messageService.subscribe("testUUID/channel/0","home_page", function(message){
-            console.log("message in");
+            //console.log("message in");
             console.log(JSON.stringify(message,null,2));
         });
+
+       
         
     }
 })();

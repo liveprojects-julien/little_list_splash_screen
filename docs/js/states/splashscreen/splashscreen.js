@@ -41,7 +41,7 @@
         });
 
         messageService.initialize();
-        mqttService.onMessageArrived(messageService.onMessageArrived);
+        //mqttService.onMessageArrived(messageService.onMessageArrived);
     
 
         var mqttOptions = {};
@@ -61,7 +61,7 @@
                 console.log("mqtt connect success");
                 $state.transitionTo('car_control',
                     {
-                        channel: vm.channel,
+                        //channel: vm.channel,
                     });
             } else if (error) {
                 console.log(error)

@@ -10,7 +10,8 @@
         '$state',
         '$stateParams',
         'mqttService',
-        'brokerDetails'
+        'brokerDetails',
+        'messageService'
         ];
     
     function carControlCtrl(
@@ -18,7 +19,8 @@
         $state,
         $stateParams, 
         mqttService, 
-        brokerDetails
+        brokerDetails,
+        messageService
     ) {
         
         var vm = this;
@@ -162,7 +164,12 @@
                 mqttService.publish(throttleTopic, JSON.stringify(payload));
             }
         })
-       
+        
+
+        messageService.subscribe("testUUID/channel/0","car_control", function(message){
+            //console.log("message in");
+            console.log(JSON.stringify(message,null,2));
+        });
               
     }
 })();
