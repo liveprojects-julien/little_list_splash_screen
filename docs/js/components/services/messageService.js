@@ -8,17 +8,14 @@ messageService.$inject = [
 
 
 function messageService(mqttService, brokerDetails, $timeout) {
+    var registry = {};
     var vm = this;
     vm.initialize = initialize;
     vm.onMessageArrived = onMessageArrived;
     vm.subscribe = subscribe;
     vm.unsubscribe = unsubscribe;
-    var topicPath;
-    var subscriberName;
-    var registry = {};
     vm.registry = registry;
-    registry[topicPath] = {};
-    registry[subscriberName] = {};
+    
     
 
     function initialize(){

@@ -58,9 +58,10 @@
 
         mqttService.connect(function (success, error) {
             if (success) {
-                $state.transitionTo('homepage',
+                console.log("mqtt connect success");
+                $state.transitionTo('car_control',
                     {
-                       // channel: vm.channel,
+                        channel: vm.channel,
                     });
             } else if (error) {
                 console.log(error)

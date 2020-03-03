@@ -42,7 +42,7 @@
             }
         }
 
-        messageService.subscribe("home_page","testUUID/channel/0", function(message){
+        messageService.subscribe("testUUID/channel/0","home_page", function(message){
             console.log("message in");
             console.log(JSON.stringify(message,null,2));
         });
