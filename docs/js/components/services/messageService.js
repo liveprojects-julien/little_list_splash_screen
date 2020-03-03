@@ -13,10 +13,10 @@ function messageService(mqttService, brokerDetails, $timeout) {
     vm.onMessageArrived = onMessageArrived;
     vm.subscribe = subscribe;
     vm.unsubscribe = unsubscribe;
-    vm.registry = registry;
+    var topicPath;
+    var subscriberName;
     var registry = {};
-    var topicPath = "";
-    var subscriberName = "";
+    vm.registry = registry;
     registry[topicPath] = {};
     registry[subscriberName] = {};
     
